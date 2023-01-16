@@ -10,7 +10,11 @@ export type KeyboardProps = {
   stop: (note: MidiValue) => Promise<void>
 }
 
-export const Keyboard: FunctionComponent<KeyboardProps> = ({ loading, stop, play }) => (
+export const Keyboard: FunctionComponent<KeyboardProps> = ({
+  loading,
+  stop,
+  play
+}) => (
   <div className={styles.keyboard}>
     {notes.map(({ midi, type, index, octave }) => {
       const label = selectKey(octave, index)
